@@ -1,0 +1,87 @@
+»—‰«„Â «Ì òÂ œÊ „« —Ì” —« œ—Ì«›  ò—œÂ Ê »«Â„ Ã„⁄ ò‰œ
+
+     int Row1,Column1,Row2,Column2;
+      System.out.println("Number of rows1:");
+       Scanner scro1 = new Scanner(System.in);
+       Row1=scro1.nextInt(); 
+      System.out.println("Number of Columns1:");
+       Scanner scco1 = new Scanner(System.in);
+       Column1=scco1.nextInt(); 
+      System.out.println("Number of rows2:");
+       Scanner scro2 = new Scanner(System.in);
+       Row2=scro2.nextInt(); 
+      System.out.println("Number of Columns2:");
+       Scanner scco2 = new Scanner(System.in);
+       Column2=scco2.nextInt(); 
+  
+     int[][] array_1 = new int[Row1][Column1];
+     int[][] array_2 = new int[Row2][Column2];
+     int[][] array_sum= new int[Row2][Column2];
+
+     for (int m = 0; m < Row1; m++)
+       {
+         for (int n = 0; n < Column1; n++)
+          {
+            System.out.println(String.format("Array1[%d,%d]", m,n));
+            Scanner sc1 = new Scanner(System.in);
+            array_1[m] [n] = sc1.nextInt();
+          }
+       }
+     for (int m = 0; m < Row2; m++)
+       {
+          for (int n = 0; n < Column2; n++)
+           {
+             System.out.println(String.format("Array2[%d,%d]", m,n));
+             Scanner sc2 = new Scanner(System.in);
+             array_2[m] [n] = sc2.nextInt();
+           }
+
+       }
+        
+     for (int m = 0; m < Row1; m++)
+       {
+          for (int n = 0; n < Column1; n++)
+           {
+             System.out.print(String.format(" %d", array_1[m][n]));
+           } 
+          System.out.println();
+       }
+     System.out.println("+");
+
+     for (int m = 0; m < Row2; m++)
+       {
+         for (int n = 0; n < Column2; n++)
+          {
+            System.out.print(String.format(" %d", array_2[m][n]));
+          } 
+         System.out.println();
+       }
+      System.out.println("=");
+
+      if(Row2==Row1&&Column2==Column1)
+       {
+        for (int m = 0; m < array_1[0].length; m++)
+         {
+           for (int n = 0; n < array_1[1].length; n++)
+            {
+              array_sum[m][n]=array_2[m][n]+array_1[m][n];
+            } 
+           System.out.println();
+         }
+        for (int m = 0; m < array_sum[0].length; m++)
+         {
+          for (int n = 0; n < array_sum[1].length; n++)
+           {
+             System.out.print(String.format(" %d", array_sum[m][n]));
+           } 
+          System.out.println();
+         }     
+    
+       }
+       else
+        {
+         System.out.println("impossible");
+        }
+ }
+    
+}
